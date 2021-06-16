@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppImageWidget extends StatelessWidget {
-  final String imageAssetString;
+  final String assetImagePath;
   final EdgeInsetsGeometry? margin;
   final AlignmentGeometry? alignment;
 
   AppImageWidget({
     this.margin,
     this.alignment,
-    required this.imageAssetString,
+    required this.assetImagePath,
   });
 
   @override
@@ -17,7 +17,7 @@ class AppImageWidget extends StatelessWidget {
       margin: margin,
       alignment: alignment,
       child: Image.asset(
-        imageAssetString,
+        assetImagePath,
         fit: BoxFit.cover,
       ),
     );

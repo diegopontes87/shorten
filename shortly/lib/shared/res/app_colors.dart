@@ -12,7 +12,7 @@ class AppColors {
   static Color transparent = Color(0x00000000);
   static Color white = Color(0xFFFFFFFF);
   static Color black = Color(0xFF000000);
-  static Color offWhite = Color(0xFFF0F1F6);
+  static Color offWhite = Color(0xFFF0F1F7);
   static Color lightGrey = Color(0xFFBFBFBF);
   static Color gray = Color(0xFF9E9AA7);
   static Color grayishViolet = Color(0xFF35323E);

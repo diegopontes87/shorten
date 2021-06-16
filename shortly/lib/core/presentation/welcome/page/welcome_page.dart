@@ -28,7 +28,7 @@ class WelcomePage extends StatelessWidget {
             ),
             AppImageWidget(
               alignment: Alignment.centerRight,
-              imageAssetString: AppAssets.backgroundIllustration,
+              assetImagePath: AppAssets.backgroundIllustration,
               margin: EdgeInsets.only(top: 20.propHeight()),
             ),
             AppTextWidget(
