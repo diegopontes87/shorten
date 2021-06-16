@@ -4,4 +4,5 @@ enum ScreenState {
   doneState,
   normalState,
   erroState,
+  validatingState,
 }

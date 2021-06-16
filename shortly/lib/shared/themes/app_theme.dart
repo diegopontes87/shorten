@@ -10,7 +10,7 @@ class AppTheme {
       colorScheme: ColorScheme(
         primary: AppColors.cyan,
         primaryVariant: AppColors.darkViolet,
-        secondary: AppColors.red,
+        secondary: AppColors.lightGrey,
         secondaryVariant: AppColors.white,
         surface: AppColors.offWhite,
         background: AppColors.white,

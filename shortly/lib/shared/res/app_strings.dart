@@ -23,4 +23,11 @@ class AppStrings {
       'lmprove brand awareness and\n content discoverability through\n customizable links,\n supercharglng audience\n engagement';
 
   static const String onboardingButtonText = 'Skip';
+
+  //HOME PAGE STRINGS
+  static const String startTitle = 'Let´s get started!';
+  static const String startSubtitle = 'Paste your first link into\n the field to shorten it';
+  static const String homeShortenButtonText = 'SHORTEN IT!';
+  static const String homeShortenTextFieldText = 'Shorten a link here ...';
+  static const String homeShortenTextFieldErrorText = 'Please add a link here';
 }

@@ -19,12 +19,10 @@ class WelcomePage extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            AppTextWidget(
-              width: Get.width,
+            AppImageWidget(
+              alignment: Alignment.center,
+              assetImagePath: AppAssets.logoImage,
               margin: EdgeInsets.only(top: 83.propHeight()),
-              text: AppStrings.appTitle,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline2,
             ),
             AppImageWidget(
               alignment: Alignment.centerRight,
@@ -48,7 +46,7 @@ class WelcomePage extends StatelessWidget {
             GetBuilder<WelcomeController>(
               init: WelcomeController(),
               builder: (controller) => AppBigButtonWidget(
-                function: () => controller.changeToOnboardingPage(),
+                function: () => controller.goToOnboardingPage(),
                 margin: EdgeInsets.only(top: 49.propHeight()),
                 buttonStyle: AppButtonStyles.primaryButtonStyle(context),
                 buttonText: AppStrings.welcomeButtonText,

@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:shortly/core/presentation/onboarding/controller/onboarding_controller.dart';
 import 'package:shortly/core/presentation/onboarding/page/onboarding_page_list.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
+import 'package:shortly/shared/res/app_assets.dart';
 import 'package:shortly/shared/res/app_strings.dart';
+import 'package:shortly/shared/widgets/atoms/images/app_image_widget.dart';
 import 'package:shortly/shared/widgets/atoms/text/app_text_widget.dart';
 import 'package:shortly/shared/widgets/molecules/carousel/app_carousel_indicator_widget.dart';
 
@@ -23,12 +25,10 @@ class OnboardingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              AppTextWidget(
-                width: Get.width,
+              AppImageWidget(
+                alignment: Alignment.center,
+                assetImagePath: AppAssets.logoImage,
                 margin: EdgeInsets.only(top: 83.propHeight()),
-                text: AppStrings.appTitle,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline2,
               ),
               Container(
                 height: 344.propHeight(),
@@ -54,7 +54,7 @@ class OnboardingPage extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 107.propHeight()),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => controller.goToHomePage(),
                   child: Container(
                     width: 80.propWidth(),
                     child: AppTextWidget(
