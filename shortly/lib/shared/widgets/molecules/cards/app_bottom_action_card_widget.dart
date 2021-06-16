@@ -58,7 +58,7 @@ class AppBottomActionCardWidget extends StatelessWidget {
                   buttonText: AppStrings.homeShortenButtonText,
                   textColor: Theme.of(context).colorScheme.onPrimary,
                   buttonStyle: AppButtonStyles.primaryButtonStyle(context),
-                  screenState: ScreenState.normalState,
+                  screenState: screenState,
                 ),
               ],
             ),

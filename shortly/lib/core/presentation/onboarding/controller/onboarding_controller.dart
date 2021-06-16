@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:shortly/shared/base/base_controller.dart';
 import 'package:shortly/shared/res/app_routes.dart';
 
-class OnboardingController extends GetxController {
+class OnboardingController extends BaseController {
   int currentPageIndex = 0;
   final PageController viewPageController = PageController(initialPage: 0);
 

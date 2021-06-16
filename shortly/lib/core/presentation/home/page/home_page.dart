@@ -8,7 +8,7 @@ import 'package:shortly/shared/widgets/atoms/text/app_text_widget.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
 import 'package:shortly/shared/widgets/molecules/cards/app_bottom_action_card_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends GetWidget<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,14 +49,11 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               GetBuilder<HomeController>(
-                init: HomeController(),
-                builder: (controller) {
-                  return AppBottomActionCardWidget(
-                    controller: controller.textEditingController,
-                    screenState: controller.screenState,
-                    buttonFunction: () => controller.shortenLinkAction(controller.textEditingController),
-                  );
-                },
+                builder: (_) => AppBottomActionCardWidget(
+                  controller: controller.textEditingController,
+                  screenState: controller.screenState,
+                  buttonFunction: () => controller.shortenLinkAction(controller.textEditingController),
+                ),
               )
             ],
           ),

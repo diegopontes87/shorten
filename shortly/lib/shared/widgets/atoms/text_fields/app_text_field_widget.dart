@@ -18,6 +18,7 @@ class AppTextFieldWidget extends StatelessWidget {
       textAlign: TextAlign.center,
       textAlignVertical: TextAlignVertical.center,
       controller: controller,
+      enableInteractiveSelection: true,
       style: Theme.of(context).textTheme.bodyText1,
       decoration: InputDecoration(
         isDense: true,
