@@ -9,7 +9,6 @@ class AppCustomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      iconTheme: IconThemeData(color: Theme.of(context).colorScheme.onSecondary),
       backgroundColor: AppColors.transparent,
       elevation: 0.0,
       title: AppTextWidget(

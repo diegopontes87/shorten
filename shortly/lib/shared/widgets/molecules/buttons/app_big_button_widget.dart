@@ -11,12 +11,14 @@ class AppBigButtonWidget extends StatelessWidget {
   final ButtonStyle buttonStyle;
   final AlignmentGeometry? buttonAligment;
   final ScreenState? screenState;
+  final EdgeInsetsGeometry? margin;
 
   AppBigButtonWidget({
     required this.function,
     required this.buttonStyle,
     required this.buttonText,
     required this.screenState,
+    this.margin,
     this.buttonAligment,
     this.textColor,
     this.loadingIndicatorColor,
@@ -27,8 +29,9 @@ class AppBigButtonWidget extends StatelessWidget {
     return Align(
       alignment: buttonAligment ?? Alignment.center,
       child: Container(
-        width: 138.propWidth(),
-        height: 44.propHeight(),
+        width: 279.propWidth(),
+        height: 49.propHeight(),
+        margin: margin,
         child: ElevatedButton(
           onPressed: function,
           style: buttonStyle,

@@ -8,21 +8,21 @@ class AppTheme {
     return ThemeData(
       scaffoldBackgroundColor: AppColors.white,
       colorScheme: ColorScheme(
-        primary: AppColors.baseGreen,
-        primaryVariant: AppColors.transparent,
-        secondary: AppColors.basePink,
-        secondaryVariant: AppColors.lightPink,
+        primary: AppColors.cyan,
+        primaryVariant: AppColors.darkViolet,
+        secondary: AppColors.red,
+        secondaryVariant: AppColors.white,
         surface: AppColors.white,
         background: AppColors.white,
-        error: AppColors.error,
+        error: AppColors.red,
         onPrimary: AppColors.white,
         onSecondary: AppColors.black,
         onSurface: AppColors.black,
-        onBackground: AppColors.black,
-        onError: AppColors.white,
+        onBackground: AppColors.grayishViolet,
+        onError: AppColors.red,
         brightness: Brightness.light,
       ),
-      textTheme: AppTextTheme.getTextTheme,
+      textTheme: AppTextTheme.getTextLightTheme,
     );
   }
 }
