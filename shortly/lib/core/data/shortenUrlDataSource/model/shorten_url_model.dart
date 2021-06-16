@@ -1,4 +1,5 @@
-import 'package:shortly/core/data/shortenUrlDataSource/shortenUrlRepository/shortenUrlEntity/shorten_url_entity.dart';
+
+import 'package:shortly/core/data/shortenUrlRepository/shortenUrlEntity/shorten_url_entity.dart';
 
 class ShortenUrlModel {
   String? code;

@@ -3,6 +3,8 @@ class AppStrings {
 
   //SHARED APP STRINGS
   static const String appTitle = 'Shortly';
+  static const String error = 'Error';
+
 
   //WELCOME PAGE STRINGS
   static const String welcomeTitle = 'More than just\n shorter links';

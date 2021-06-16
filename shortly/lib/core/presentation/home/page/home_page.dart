@@ -52,7 +52,7 @@ class HomePage extends GetWidget<HomeController> {
                 builder: (_) => AppBottomActionCardWidget(
                   controller: controller.textEditingController,
                   screenState: controller.screenState,
-                  buttonFunction: () => controller.shortenLinkAction(controller.textEditingController),
+                  buttonFunction: () => controller.shortenLinkAction(controller.textEditingController, errorSnackBar),
                 ),
               )
             ],
@@ -60,5 +60,9 @@ class HomePage extends GetWidget<HomeController> {
         ),
       ),
     );
+  }
+
+  void errorSnackBar(String error){
+    Get.snackbar(AppStrings.error, error);
   }
 }
