@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:multiple_result/multiple_result.dart';
-import 'package:shortly/core/data/shortenUrlDataSource/model/shorten_url_model.dart';
-import 'package:shortly/core/data/shortenUrlDataSource/model/shorten_url_model_resut.dart';
-import 'package:shortly/core/data/shortenUrlRepository/shortenUrlEntity/shorten_url_entity.dart';
+import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/model/shorten_url_model_result.dart';
+import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/model/shorten_url_model.dart';
+import 'package:shortly/core/data/shortenUrlData/shortenUrlRepository/shortenUrlEntity/shorten_url_entity.dart';
 import 'package:shortly/shared/base/entity/error_entity.dart';
 import 'package:shortly/shared/base/models/error_model.dart';
 import 'package:shortly/shared/base/structure/base_remote_datasource.dart';

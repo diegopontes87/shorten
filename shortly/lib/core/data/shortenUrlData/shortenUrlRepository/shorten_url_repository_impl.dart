@@ -1,7 +1,7 @@
 import 'package:multiple_result/multiple_result.dart';
-import 'package:shortly/core/data/shortenUrlDataSource/localDataSource/shorten_url_local_datasource.dart';
-import 'package:shortly/core/data/shortenUrlDataSource/remoteDataSource/shorten_url_remote_datasource.dart';
-import 'package:shortly/core/data/shortenUrlRepository/shortenUrlEntity/shorten_url_entity.dart';
+import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/localDataSource/shorten_url_local_datasource.dart';
+import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/remoteDataSource/shorten_url_remote_datasource.dart';
+import 'package:shortly/core/data/shortenUrlData/shortenUrlRepository/shortenUrlEntity/shorten_url_entity.dart';
 import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlRepository/shorten_url_repository.dart';
 import 'package:shortly/shared/base/entity/error_entity.dart';
 

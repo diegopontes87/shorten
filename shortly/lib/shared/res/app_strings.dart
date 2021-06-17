@@ -32,4 +32,7 @@ class AppStrings {
   static const String homeShortenButtonText = 'SHORTEN IT!';
   static const String homeShortenTextFieldText = 'Shorten a link here ...';
   static const String homeShortenTextFieldErrorText = 'Please add a link here';
+
+  //LOCAL KEYS TO ACCESS STORAGE
+  static const String localListKey = 'localListKey';
 }
