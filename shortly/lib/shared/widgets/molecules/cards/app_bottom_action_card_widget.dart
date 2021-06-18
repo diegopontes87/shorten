@@ -43,7 +43,7 @@ class AppBottomActionCardWidget extends StatelessWidget {
                     color: Theme.of(context).colorScheme.background,
                     borderRadius: BorderRadius.all(
                       Radius.circular(
-                        4.propWidth(),
+                        4.propHeight(),
                       ),
                     ),
                   ),

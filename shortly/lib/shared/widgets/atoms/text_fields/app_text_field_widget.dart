@@ -17,11 +17,17 @@ class AppTextFieldWidget extends StatelessWidget {
     return TextField(
       textAlign: TextAlign.center,
       textAlignVertical: TextAlignVertical.center,
-      controller: controller,
       enableInteractiveSelection: true,
       style: Theme.of(context).textTheme.bodyText1,
+      toolbarOptions: ToolbarOptions(
+        paste: true,
+        cut: true,
+        copy: true,
+        selectAll: true,
+      ),
+      readOnly: false,
+      focusNode: FocusNode(),
       decoration: InputDecoration(
-        isDense: true,
         enabledBorder: textFieldBorderColor(context, screenState, controller.text),
         focusedBorder: textFieldBorderColor(context, screenState, controller.text),
         hintText: hintText(context, screenState, controller.text),
@@ -50,16 +56,16 @@ class AppTextFieldWidget extends StatelessWidget {
   InputBorder? textFieldBorderColor(BuildContext context, ScreenState screenState, String? text) {
     if (screenState == ScreenState.validatingState && (text == null || text.isEmpty)) {
       return OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(4)),
+        borderRadius: BorderRadius.all(Radius.circular(4.propHeight())),
         borderSide: BorderSide(
           color: Theme.of(context).colorScheme.error,
-          width: 2.propWidth(),
+          width: 1.propWidth(),
         ),
       );
     } else {
       return OutlineInputBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(4),
+          Radius.circular(4.propHeight()),
         ),
         borderSide: BorderSide(
           color: Colors.transparent,

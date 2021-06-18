@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shortly/core/presentation/home/controller/home_controller.dart';
 import 'package:shortly/shared/res/app_assets.dart';
@@ -28,6 +29,8 @@ class HomePage extends GetWidget<HomeController> {
                     margin: EdgeInsets.only(top: 83.propHeight()),
                   ),
                   AppImageWidget(
+                    height: 324.propHeight(),
+                    width: Get.width,
                     alignment: Alignment.centerRight,
                     assetImagePath: AppAssets.backgroundIllustration,
                     margin: EdgeInsets.only(top: 20.propHeight()),
@@ -62,7 +65,7 @@ class HomePage extends GetWidget<HomeController> {
     );
   }
 
-  void errorSnackBar(String error){
+  void errorSnackBar(String error) {
     Get.snackbar(AppStrings.error, error);
   }
 }

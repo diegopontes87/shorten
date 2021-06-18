@@ -48,7 +48,7 @@ class OnboardingPage extends StatelessWidget {
                 currentWidgetIndex: controller.currentPageIndex,
                 indicatorBorderColor: Theme.of(context).colorScheme.onSurface,
                 indicatorBackgroundColor: Theme.of(context).colorScheme.onSurface,
-                indicatorRadius: 10.propWidth(),
+                indicatorRadius: 10.propHeight(),
                 indicatorBorderWidth: 2.propWidth(),
               ),
               Container(

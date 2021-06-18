@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
 import 'package:shortly/shared/widgets/atoms/images/app_circular_image_widget.dart';
 import 'package:shortly/shared/widgets/atoms/text/app_text_widget.dart';
 
 class AppCardWidget extends StatelessWidget {
-  final double imageBackgroundHeight;
-  final double imageBackgroundWidth;
   final Color? imageBackgroundColor;
   final Color? cardBackgroundColor;
   final double? imageBorderRadius;
@@ -17,8 +14,6 @@ class AppCardWidget extends StatelessWidget {
 
   AppCardWidget({
     required this.assetImagePath,
-    required this.imageBackgroundHeight,
-    required this.imageBackgroundWidth,
     required this.cardTitle,
     required this.cardSubtitle,
     this.cardBackgroundColor,
@@ -66,8 +61,6 @@ class AppCardWidget extends StatelessWidget {
               ),
             ),
             AppCircularImageWidget(
-              imageBackgroundHeight: imageBackgroundHeight,
-              imageBackgroundWidth: imageBackgroundWidth,
               imageBackgroundColor: imageBackgroundColor,
               imageBorderRadius: imageBorderRadius,
               assetImagePath: assetImagePath,

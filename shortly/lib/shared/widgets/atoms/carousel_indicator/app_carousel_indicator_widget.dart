@@ -18,10 +18,14 @@ class AppCarouselIndicatorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: indicatorRadius,
+      height: indicatorRadius,
       margin: EdgeInsets.symmetric(horizontal: 5.propWidth()),
       decoration: BoxDecoration(
         color: indicatorBackgroundColor,
-        border: Border.all(width: indicatorBorderWidth ?? 1.propWidth(), color: indicatorBorderColor),
+        border: Border.all(
+          width: indicatorBorderWidth ?? 1.propWidth(),
+          color: indicatorBorderColor,
+        ),
         borderRadius: BorderRadius.all(
           Radius.circular(indicatorRadius),
         ),
