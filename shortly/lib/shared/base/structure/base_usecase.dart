@@ -1,3 +1,3 @@
-abstract class BaseUseCase<Output> {
-  Future<Output> call(String input);
+abstract class BaseUseCase<Input, Output> {
+  Future<Output> call(Input? input);
 }

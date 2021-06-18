@@ -17,16 +17,9 @@ class AppTextFieldWidget extends StatelessWidget {
     return TextField(
       textAlign: TextAlign.center,
       textAlignVertical: TextAlignVertical.center,
+      controller: controller,
       enableInteractiveSelection: true,
       style: Theme.of(context).textTheme.bodyText1,
-      toolbarOptions: ToolbarOptions(
-        paste: true,
-        cut: true,
-        copy: true,
-        selectAll: true,
-      ),
-      readOnly: false,
-      focusNode: FocusNode(),
       decoration: InputDecoration(
         enabledBorder: textFieldBorderColor(context, screenState, controller.text),
         focusedBorder: textFieldBorderColor(context, screenState, controller.text),

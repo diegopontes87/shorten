@@ -4,7 +4,9 @@ class AppStrings {
   //SHARED APP STRINGS
   static const String appTitle = 'Shortly';
   static const String error = 'Error';
-
+  static const String emptyListMessage = 'There is no available link list!';
+  static const String emptyValueErrorMessage = 'This field cannot be empty!';
+  static const String savingDBError = 'Error while trying to store url!';
 
   //WELCOME PAGE STRINGS
   static const String welcomeTitle = 'More than just\n shorter links';
@@ -35,4 +37,11 @@ class AppStrings {
 
   //LOCAL KEYS TO ACCESS STORAGE
   static const String localListKey = 'localListKey';
+
+  //DATABASE TABLE STRINGS
+  static const String tableName = 'ShortenUrlTable';
+  static const String idColumn = 'id';
+  static const String codeColumn = 'code';
+  static const String shortLinkColumn = 'short_link';
+  static const String originalLinkColumn = 'original_link';
 }

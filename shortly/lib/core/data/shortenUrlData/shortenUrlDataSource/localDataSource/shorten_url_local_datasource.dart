@@ -1,42 +1,47 @@
 import 'dart:convert';
-
-import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/model/shorten_url_list_model.dart';
+import 'package:multiple_result/multiple_result.dart';
 import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/model/shorten_url_model.dart';
-import 'package:shortly/shared/base/structure/base_local_datasource.dart';
+import 'package:shortly/core/data/shortenUrlData/shortenUrlRepository/shortenUrlEntity/shorten_url_entity.dart';
+import 'package:shortly/shared/base/entity/error_entity.dart';
+import 'package:shortly/shared/base/structure/base_db_provider.dart';
 import 'package:shortly/shared/res/app_strings.dart';
 
-class ShortenUrlLocalDataSource extends BaseLocalDataSource {
-
-  String key = AppStrings.localListKey;
-
-  Future saveShortenUrlModel(ShortenUrlModel shortenUrlModel) async {
-    ShortenUrlListModel? shortenUrlList = await getShortenUrlList();
-    if(shortenUrlList != null){
-      shortenUrlList.shortenUrlModelList?.add(shortenUrlModel);
-      box.write(key,json.encode(shortenUrlList.toJson()));
-    } else {
-      shortenUrlList = ShortenUrlListModel();
-      shortenUrlList.shortenUrlModelList?.add(shortenUrlModel);
-      box.write(key,json.encode(shortenUrlList.toJson()));
-    }
+class ShortenUrlLocalDataSource extends BaseDBProvider {
+  Future<Result<ErrorEntity, ShortenUrlEntity>> saveNewShortenUrl(ShortenUrlEntity shortenUrlEntity) async {
+    final db = await database;
+    var result = db?.insert(AppStrings.tableName, shortenUrlEntity.toModel().toJson());
+    if (result != null) return Success(shortenUrlEntity);
+    return Error(ErrorEntity(error: AppStrings.savingDBError));
   }
 
-  Future<ShortenUrlListModel>? getShortenUrlList() async{
-    String stringList = await box.read(key);
-    ShortenUrlListModel? shortenUrlList = ShortenUrlListModel.fromJson(json.decode(stringList));
-    return shortenUrlList;
+  Future<Result<ErrorEntity, List<ShortenUrlEntity>>> getShortenUrlList() async {
+    final db = await database;
+    List<Map> maps = await db!.query(
+      AppStrings.tableName,
+      columns: [
+        AppStrings.idColumn,
+        AppStrings.shortLinkColumn,
+        AppStrings.originalLinkColumn,
+        AppStrings.codeColumn,
+      ],
+    );
+    if (maps.length > 0) {
+      List<ShortenUrlEntity> list = [];
+      maps.forEach((element) {
+        list.add(ShortenUrlModel.fromJson(json.decode(element.toString())).toEntity());
+      });
+      return Success(list);
+    }
+    return Error(ErrorEntity(error: AppStrings.emptyListMessage));
   }
 
-  Future<ShortenUrlListModel?> deleteShortenUrlModel(ShortenUrlModel shortenUrlModel) async {
-    ShortenUrlListModel? shortenUrlList = await getShortenUrlList();
-    if(shortenUrlList != null){
-      shortenUrlList.shortenUrlModelList?.removeWhere((element) => element.code == shortenUrlModel.code);
-      box.remove(key);
-      if(shortenUrlList.shortenUrlModelList?.length != 0) {
-        box.write(key,json.encode(shortenUrlList.toJson()));
-      }
-      return shortenUrlList;
-    }
-    return shortenUrlList;
+  Future<Result<ErrorEntity, List<ShortenUrlEntity>>> deleteShortenUrlModel(String id) async {
+    final db = await database;
+    await db?.delete(
+      AppStrings.tableName,
+      where: '${AppStrings.idColumn} = ?',
+      whereArgs: [id],
+    );
+    return await getShortenUrlList();
   }
 }

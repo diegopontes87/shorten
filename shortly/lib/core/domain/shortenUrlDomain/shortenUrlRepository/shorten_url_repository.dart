@@ -3,5 +3,9 @@ import 'package:shortly/core/data/shortenUrlData/shortenUrlRepository/shortenUrl
 import 'package:shortly/shared/base/entity/error_entity.dart';
 
 abstract class ShortenUrlRepository {
-  Future<Result<ErrorEntity, ShortenUrlEntity>> getShortenUrl(String input);
+  Future<Result<ErrorEntity, ShortenUrlEntity>> getShortenUrlFromAPI(String input);
+
+  Future<Result<ErrorEntity, ShortenUrlEntity>> saveNewShortenUrlDB(ShortenUrlEntity shortenUrlEntity);
+  Future<Result<ErrorEntity, List<ShortenUrlEntity>>> getShortenUrlListDB();
+  Future<Result<ErrorEntity, List<ShortenUrlEntity>>> deleteShortenUrlModelDB(String id);
 }

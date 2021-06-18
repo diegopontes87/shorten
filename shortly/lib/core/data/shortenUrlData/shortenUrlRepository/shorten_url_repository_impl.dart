@@ -15,8 +15,26 @@ class ShortenRepositoryImpl implements ShortenUrlRepository {
   );
 
   @override
-  Future<Result<ErrorEntity, ShortenUrlEntity>> getShortenUrl(String input) async {
+  Future<Result<ErrorEntity, ShortenUrlEntity>> getShortenUrlFromAPI(String input) async {
     var result = await _remoteDataSource.getShortenUrl(input);
+    return result;
+  }
+
+  @override
+  Future<Result<ErrorEntity, List<ShortenUrlEntity>>> deleteShortenUrlModelDB(String id) async {
+    var result = await _localDataSource.deleteShortenUrlModel(id);
+    return result;
+  }
+
+  @override
+  Future<Result<ErrorEntity, List<ShortenUrlEntity>>> getShortenUrlListDB() async {
+    var result = await _localDataSource.getShortenUrlList();
+    return result;
+  }
+
+  @override
+  Future<Result<ErrorEntity, ShortenUrlEntity>> saveNewShortenUrlDB(ShortenUrlEntity shortenUrlModel) async {
+    var result = await _localDataSource.saveNewShortenUrl(shortenUrlModel);
     return result;
   }
 }
