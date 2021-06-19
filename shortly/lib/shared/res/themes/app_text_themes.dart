@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
-import 'package:shortly/shared/res/app_colors.dart';
+import 'package:shortly/shared/res/base_res_files/app_colors.dart';
 
 class AppTextTheme {
   static TextTheme get getTextLightTheme {

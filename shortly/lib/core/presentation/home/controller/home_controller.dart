@@ -6,10 +6,11 @@ import 'package:shortly/core/domain/shorten_url_domain/shorten_url_usecases/dele
 import 'package:shortly/core/domain/shorten_url_domain/shorten_url_usecases/get_shorten_url_api_usecase.dart';
 import 'package:shortly/core/domain/shorten_url_domain/shorten_url_usecases/get_shorten_url_list_db_usecase.dart';
 import 'package:shortly/core/domain/shorten_url_domain/shorten_url_usecases/save_new_shorten_url_db_usecase.dart';
+import 'package:shortly/shared/base/entity/error_entity.dart';
 
 import 'package:shortly/shared/base/models/medium_button_state_model.dart';
 import 'package:shortly/shared/base/structure/base_controller.dart';
-import 'package:shortly/shared/screen_state/screen_state.dart';
+import 'package:shortly/shared/utils/screen_state/screen_state.dart';
 
 class HomeController extends BaseController {
   bool showFirstPage = true;
@@ -45,37 +46,50 @@ class HomeController extends BaseController {
     result.when(
       (errorEntity) {
         errorCallback(errorEntity.error);
-        updateScreenState(ScreenState.initialState);
+        updateScreenState(ScreenState.erroState);
       },
       (shortenUrlEntitySuccess) async {
         print(shortenUrlEntitySuccess.shortLink);
-        await saveNewShortenUrlIntoDB(shortenUrlEntitySuccess);
-        await getShortenUrlListFromDB(insertAnimationFunction);
+        await saveNewShortenUrlIntoDB(shortenUrlEntitySuccess, errorCallback);
+        await getShortenUrlListFromDB(insertAnimationFunction, errorCallback);
         changePageVisibility();
         updateScreenState(ScreenState.doneState);
       },
     );
   }
 
-  Future saveNewShortenUrlIntoDB(ShortenUrlEntity entity) async {
+  Future saveNewShortenUrlIntoDB(ShortenUrlEntity entity, Function errorCallback) async {
     var result = await _saveNewShortenUrlDBUsecase(entity);
     result.when(
-      (errorEntity) => print(errorEntity.error),
+      (errorEntity) {
+        errorCallback(errorEntity.error);
+        print(errorEntity.error);
+        updateScreenState(ScreenState.erroState);
+      },
       (succesEntity) => print(succesEntity.code),
     );
   }
 
-  Future getShortenUrlListFromDB(Function insertAnimationFunction) async {
+  Future getShortenUrlListFromDB(
+    Function insertAnimationFunction,
+    Function errorCallback,
+  ) async {
     var result = await _getShortenUrlListDBUsecase(null);
     result.when(
-      (error) => print(error),
+      (errorEntity) {
+        errorCallback(errorEntity.error);
+        print(errorEntity.error);
+      },
       (successList) {
         setMediumButtonStateList(successList, insertAnimationFunction);
       },
     );
   }
 
-  void setMediumButtonStateList(List<ShortenUrlEntity> entityList, Function insertAnimationFunction) {
+  void setMediumButtonStateList(
+    List<ShortenUrlEntity> entityList,
+    Function insertAnimationFunction,
+  ) {
     entityList.reversed.forEach(
       (element) {
         var entity = MediumButtonStateModel(entity: element);
@@ -118,10 +132,12 @@ class HomeController extends BaseController {
     updateScreenState(ScreenState.doneState);
   }
 
-  Future deleteFromDB(int? id, Function deleteAnimationFunction) async {
+  Future deleteFromDB(int? id, Function deleteAnimationFunction, Function errorCallback) async {
     var result = await _deleteShortenUrlDBUsecase(id.toString());
-    result.when((error) {
-      print(error.error);
+    result.when((errorEntity) {
+      errorCallback(errorEntity);
+      print(errorEntity.error);
+      updateScreenState(ScreenState.erroState);
     }, (success) {
       deleteAnimationFunction();
     });

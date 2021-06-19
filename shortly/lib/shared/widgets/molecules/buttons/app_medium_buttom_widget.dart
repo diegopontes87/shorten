@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shortly/shared/screen_state/screen_state.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
+import 'package:shortly/shared/utils/screen_state/screen_state.dart';
 import 'package:shortly/shared/widgets/atoms/text/app_text_widget.dart';
 
 class AppMediumButtonWidget extends StatelessWidget {

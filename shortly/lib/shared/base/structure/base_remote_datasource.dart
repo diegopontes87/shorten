@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:shortly/shared/res/app_request_strings.dart';
+import 'package:shortly/shared/res/base_res_files/app_request_strings.dart';
 
 class BaseRemoteDataSource {
   Dio request = Dio(

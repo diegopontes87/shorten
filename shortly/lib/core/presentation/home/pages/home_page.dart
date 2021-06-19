@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:shortly/core/presentation/home/pages/home_history_page.dart';
 import 'package:shortly/core/presentation/home/controller/home_controller.dart';
 import 'package:shortly/core/presentation/home/pages/home_presentation_page.dart';
-import 'package:shortly/shared/res/app_strings.dart';
+import 'package:shortly/shared/res/base_res_files/app_strings.dart';
 import 'package:shortly/shared/widgets/molecules/cards/app_bottom_action_card_widget.dart';
 
 class HomePage extends GetWidget<HomeController> {

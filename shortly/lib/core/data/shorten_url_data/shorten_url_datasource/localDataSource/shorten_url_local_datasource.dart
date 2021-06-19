@@ -4,7 +4,7 @@ import 'package:shortly/core/data/shorten_url_data/shorten_url_datasource/model/
 import 'package:shortly/core/data/shorten_url_data/shorten_url_repository/shorten_url_entity/shorten_url_entity.dart';
 import 'package:shortly/shared/base/entity/error_entity.dart';
 import 'package:shortly/shared/base/structure/base_db_provider.dart';
-import 'package:shortly/shared/res/app_strings.dart';
+import 'package:shortly/shared/res/base_res_files/app_strings.dart';
 
 class ShortenUrlLocalDataSource extends BaseDBProvider {
   Future<Result<ErrorEntity, ShortenUrlEntity>> saveNewShortenUrl(ShortenUrlEntity shortenUrlEntity) async {

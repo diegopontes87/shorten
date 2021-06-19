@@ -7,7 +7,7 @@ import 'package:shortly/core/data/shorten_url_data/shorten_url_repository/shorte
 import 'package:shortly/shared/base/entity/error_entity.dart';
 import 'package:shortly/shared/base/models/error_model.dart';
 import 'package:shortly/shared/base/structure/base_remote_datasource.dart';
-import 'package:shortly/shared/res/app_request_strings.dart';
+import 'package:shortly/shared/res/base_res_files/app_request_strings.dart';
 
 class ShortenUrlRemoteDataSource extends BaseRemoteDataSource {
   Future<Result<ErrorEntity, ShortenUrlEntity>> getShortenUrl(String input) async {

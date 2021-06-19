@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
-import 'package:shortly/shared/res/app_strings.dart';
+import 'package:shortly/shared/res/base_res_files/app_strings.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 

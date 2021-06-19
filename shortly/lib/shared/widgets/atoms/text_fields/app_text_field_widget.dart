@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shortly/shared/res/app_strings.dart';
-import 'package:shortly/shared/screen_state/screen_state.dart';
+import 'package:shortly/shared/res/base_res_files/app_strings.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
+import 'package:shortly/shared/utils/screen_state/screen_state.dart';
 
 class AppTextFieldWidget extends StatelessWidget {
   const AppTextFieldWidget({

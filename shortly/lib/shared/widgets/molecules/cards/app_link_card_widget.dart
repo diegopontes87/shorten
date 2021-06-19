@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shortly/shared/base/models/medium_button_state_model.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
-import 'package:shortly/shared/res/app_strings.dart';
-import 'package:shortly/shared/screen_state/screen_state.dart';
-import 'package:shortly/shared/styles/app_button_styles.dart';
+import 'package:shortly/shared/res/base_res_files/app_strings.dart';
+import 'package:shortly/shared/res/styles/app_button_styles.dart';
+import 'package:shortly/shared/utils/screen_state/screen_state.dart';
 import 'package:shortly/shared/widgets/atoms/text/app_text_widget.dart';
 import 'package:shortly/shared/widgets/molecules/buttons/app_medium_buttom_widget.dart';
 

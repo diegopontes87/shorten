@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shortly/shared/res/app_assets.dart';
-import 'package:shortly/shared/res/app_strings.dart';
+import 'package:shortly/shared/res/base_res_files/app_assets.dart';
+import 'package:shortly/shared/res/base_res_files/app_strings.dart';
 import 'package:shortly/shared/widgets/molecules/cards/app_card_widget.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
 

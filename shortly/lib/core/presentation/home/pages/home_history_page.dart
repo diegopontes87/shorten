@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shortly/core/presentation/home/controller/home_controller.dart';
 import 'package:shortly/shared/base/models/medium_button_state_model.dart';
-import 'package:shortly/shared/res/app_strings.dart';
+import 'package:shortly/shared/res/base_res_files/app_strings.dart';
 import 'package:shortly/shared/widgets/atoms/text/app_text_widget.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
 import 'package:shortly/shared/widgets/molecules/cards/app_link_card_widget.dart';
@@ -61,23 +61,24 @@ class HomeHistoryPage extends GetWidget<HomeController> {
             index,
             controller.mediumButtonStateModelList,
           ),
+          errorSnackBar,
         ),
       ),
     );
   }
 
   deleteAnimatedItem(BuildContext context, index, List<MediumButtonStateModel> list) async {
-    try {
-      listKey?.currentState?.removeItem(index, (_, animation) {
-        animation.addListener(() {
-          if (animation.isDismissed) {
-            controller.cleanAndCkeckList(list, index);
-          }
-        });
-        return _buildItem(context, index, animation);
-      }, duration: const Duration(milliseconds: 500));
-    } catch (e) {
-      print(e);
-    }
+    listKey?.currentState?.removeItem(index, (_, animation) {
+      animation.addListener(() {
+        if (animation.isDismissed) {
+          controller.cleanAndCkeckList(list, index);
+        }
+      });
+      return _buildItem(context, index, animation);
+    }, duration: const Duration(milliseconds: 500));
+  }
+
+  void errorSnackBar(String error) {
+    Get.snackbar(AppStrings.error, error);
   }
 }

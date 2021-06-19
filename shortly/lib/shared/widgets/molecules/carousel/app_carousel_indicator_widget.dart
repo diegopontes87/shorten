@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shortly/shared/res/app_colors.dart';
+import 'package:shortly/shared/res/base_res_files/app_colors.dart';
 import 'package:shortly/shared/widgets/atoms/carousel_indicator/app_carousel_indicator_widget.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
 
