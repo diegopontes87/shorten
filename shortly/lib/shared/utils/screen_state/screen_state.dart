@@ -3,6 +3,6 @@ enum ScreenState {
   loadingState,
   doneState,
   normalState,
-  erroState,
+  errorState,
   validatingState,
 }

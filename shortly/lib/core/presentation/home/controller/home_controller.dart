@@ -46,7 +46,7 @@ class HomeController extends BaseController {
     result.when(
       (errorEntity) {
         errorCallback(errorEntity.error);
-        updateScreenState(ScreenState.erroState);
+        updateScreenState(ScreenState.errorState);
       },
       (shortenUrlEntitySuccess) async {
         print(shortenUrlEntitySuccess.shortLink);
@@ -64,7 +64,7 @@ class HomeController extends BaseController {
       (errorEntity) {
         errorCallback(errorEntity.error);
         print(errorEntity.error);
-        updateScreenState(ScreenState.erroState);
+        updateScreenState(ScreenState.errorState);
       },
       (succesEntity) => print(succesEntity.code),
     );
@@ -137,7 +137,7 @@ class HomeController extends BaseController {
     result.when((errorEntity) {
       errorCallback(errorEntity);
       print(errorEntity.error);
-      updateScreenState(ScreenState.erroState);
+      updateScreenState(ScreenState.errorState);
     }, (success) {
       deleteAnimationFunction();
     });
