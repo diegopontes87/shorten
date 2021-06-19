@@ -26,7 +26,7 @@ class AppLinkCardWidget extends StatelessWidget {
         alignment: Alignment.topCenter,
         child: Container(
           margin: EdgeInsets.only(top: 20.propHeight()),
-          height: 176.propHeight(),
+          height: 200.propHeight(),
           width: 325.propWidth(),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(

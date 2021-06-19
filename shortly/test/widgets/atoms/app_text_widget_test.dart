@@ -20,4 +20,5 @@ void main() {
     final textFinder = find.text(AppStrings.appTitle);
     expect(textFinder, findsOneWidget);
   });
+  
 }

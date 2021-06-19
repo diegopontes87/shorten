@@ -13,7 +13,17 @@ void main() {
     );
   }
 
-  testWidgets('Check Text Widget', (WidgetTester tester) async {
+  testWidgets('Check Text Widget error when textfield is empty', (WidgetTester tester) async {
+    TextEditingController textEditingController = TextEditingController();
+    ScreenState screenState = ScreenState.validatingState;
+    await tester.pumpWidget(getMaterialApp(
+      AppTextFieldWidget(controller: textEditingController, screenState: screenState),
+    ));
+    final textFinder = find.text(AppStrings.homeShortenTextFieldErrorText);
+    expect(textFinder, findsOneWidget);
+  });
+
+  testWidgets('Check Text Widget error when textfield is empty', (WidgetTester tester) async {
     TextEditingController textEditingController = TextEditingController();
     ScreenState screenState = ScreenState.validatingState;
     await tester.pumpWidget(getMaterialApp(
