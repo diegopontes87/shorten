@@ -28,20 +28,24 @@ class ShortenUrlLocalDataSource extends BaseDBProvider {
     if (maps.length > 0) {
       List<ShortenUrlEntity> list = [];
       maps.forEach((element) {
-        list.add(ShortenUrlModel.fromJson(json.decode(element.toString())).toEntity());
+        list.add(ShortenUrlModel.fromJson(element).toEntity());
       });
       return Success(list);
+    } else if (maps.isEmpty) {
+      return Success([]);
+    } else {
+      return Error(ErrorEntity(error: AppStrings.emptyListMessage));
     }
-    return Error(ErrorEntity(error: AppStrings.emptyListMessage));
   }
 
-  Future<Result<ErrorEntity, List<ShortenUrlEntity>>> deleteShortenUrlModel(String id) async {
+  Future<Result<ErrorEntity, String>> deleteShortenUrlModel(String id) async {
     final db = await database;
-    await db?.delete(
+    var result = await db?.delete(
       AppStrings.tableName,
       where: '${AppStrings.idColumn} = ?',
       whereArgs: [id],
     );
-    return await getShortenUrlList();
+    if (result != null) return Success(AppStrings.successDelete);
+    return Error(ErrorEntity(error: AppStrings.error));
   }
 }

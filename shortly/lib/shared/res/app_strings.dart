@@ -7,6 +7,7 @@ class AppStrings {
   static const String emptyListMessage = 'There is no available link list!';
   static const String emptyValueErrorMessage = 'This field cannot be empty!';
   static const String savingDBError = 'Error while trying to store url!';
+  static const String successDelete = 'Item deleted!';
 
   //WELCOME PAGE STRINGS
   static const String welcomeTitle = 'More than just\n shorter links';
@@ -34,6 +35,9 @@ class AppStrings {
   static const String homeShortenButtonText = 'SHORTEN IT!';
   static const String homeShortenTextFieldText = 'Shorten a link here ...';
   static const String homeShortenTextFieldErrorText = 'Please add a link here';
+  static const String copyButtonText = 'COPY';
+  static const String copiedButtonText = 'COPIED';
+  static const String yourLinkHistoryTitle = 'Your link History';
 
   //LOCAL KEYS TO ACCESS STORAGE
   static const String localListKey = 'localListKey';

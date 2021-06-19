@@ -5,6 +5,7 @@ import 'package:shortly/core/data/shortenUrlData/shortenUrlRepository/shorten_ur
 import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlRepository/shorten_url_repository.dart';
 import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlUsecases/delete_shorten_url_db_usecase.dart';
 import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlUsecases/get_shorten_url_api_usecase.dart';
+import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlUsecases/get_shorten_url_list_db_usecase.dart';
 import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlUsecases/save_new_shorten_url_db_usecase.dart';
 import 'package:shortly/core/presentation/home/controller/home_controller.dart';
 
@@ -19,16 +20,14 @@ class HomeBindings extends Bindings {
 
   registerControllers() {
     Get.lazyPut<HomeController>(
-      () => HomeController(
-        Get.find<GetShortenUrlApiUsecase>(),
-        Get.find<SaveNewShortenUrlDBUsecase>(),
-      ),
+      () => HomeController(Get.find<GetShortenUrlApiUsecase>(), Get.find<SaveNewShortenUrlDBUsecase>(), Get.find<GetShortenUrlListDBUsecase>(),
+          Get.find<DeleteShortenUrlDBUsecase>()),
     );
   }
 
   registerUseCases() {
     Get.lazyPut<GetShortenUrlApiUsecase>(() => GetShortenUrlApiUsecase(Get.find<ShortenUrlRepository>()));
-    Get.lazyPut<GetShortenUrlApiUsecase>(() => GetShortenUrlApiUsecase(Get.find<ShortenUrlRepository>()));
+    Get.lazyPut<GetShortenUrlListDBUsecase>(() => GetShortenUrlListDBUsecase(Get.find<ShortenUrlRepository>()));
     Get.lazyPut<SaveNewShortenUrlDBUsecase>(() => SaveNewShortenUrlDBUsecase(Get.find<ShortenUrlRepository>()));
     Get.lazyPut<DeleteShortenUrlDBUsecase>(() => DeleteShortenUrlDBUsecase(Get.find<ShortenUrlRepository>()));
   }

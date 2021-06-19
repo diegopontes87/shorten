@@ -29,6 +29,7 @@ class AppTextWidget extends StatelessWidget {
       color: Colors.transparent,
       child: Text(
         text == null ? '' : text!,
+        overflow: TextOverflow.ellipsis,
         style: style == null ? Theme.of(context).textTheme.headline5 : style,
         textAlign: textAlign,
       ),

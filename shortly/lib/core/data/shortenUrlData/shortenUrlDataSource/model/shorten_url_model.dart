@@ -14,7 +14,7 @@ class ShortenUrlModel {
     this.originalLink,
   });
 
-  ShortenUrlModel.fromJson(Map<String, dynamic> json) {
+  ShortenUrlModel.fromJson(Map<dynamic, dynamic> json) {
     id = json["id"];
     code = json['code'];
     shortLink = json['short_link'];

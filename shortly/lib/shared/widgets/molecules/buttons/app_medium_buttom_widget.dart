@@ -3,7 +3,7 @@ import 'package:shortly/shared/screen_state/screen_state.dart';
 import 'package:shortly/shared/extensions/app_sizes_extensions.dart';
 import 'package:shortly/shared/widgets/atoms/text/app_text_widget.dart';
 
-class AppBigButtonWidget extends StatelessWidget {
+class AppMediumButtonWidget extends StatelessWidget {
   final String buttonText;
   final VoidCallback? function;
   final Color? textColor;
@@ -13,7 +13,7 @@ class AppBigButtonWidget extends StatelessWidget {
   final ScreenState? screenState;
   final EdgeInsetsGeometry? margin;
 
-  AppBigButtonWidget({
+  AppMediumButtonWidget({
     required this.function,
     required this.buttonStyle,
     required this.buttonText,
@@ -30,7 +30,7 @@ class AppBigButtonWidget extends StatelessWidget {
       alignment: buttonAligment ?? Alignment.center,
       child: Container(
         width: 279.propWidth(),
-        height: 49.propHeight(),
+        height: 39.propHeight(),
         margin: margin,
         child: ElevatedButton(
           onPressed: function,
@@ -38,7 +38,7 @@ class AppBigButtonWidget extends StatelessWidget {
           child: screenState == ScreenState.loadingState
               ? Container(
                   height: 24.propHeight(),
-                  width: 24.propHeight(),
+                  width: 24.propWidth(),
                   child: CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(
                       loadingIndicatorColor ?? Colors.white,

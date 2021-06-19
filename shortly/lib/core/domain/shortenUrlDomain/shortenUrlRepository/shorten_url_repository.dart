@@ -7,5 +7,5 @@ abstract class ShortenUrlRepository {
 
   Future<Result<ErrorEntity, ShortenUrlEntity>> saveNewShortenUrlDB(ShortenUrlEntity shortenUrlEntity);
   Future<Result<ErrorEntity, List<ShortenUrlEntity>>> getShortenUrlListDB();
-  Future<Result<ErrorEntity, List<ShortenUrlEntity>>> deleteShortenUrlModelDB(String id);
+  Future<Result<ErrorEntity, String>> deleteShortenUrlModelDB(String id);
 }

@@ -21,7 +21,7 @@ class ShortenRepositoryImpl implements ShortenUrlRepository {
   }
 
   @override
-  Future<Result<ErrorEntity, List<ShortenUrlEntity>>> deleteShortenUrlModelDB(String id) async {
+  Future<Result<ErrorEntity, String>> deleteShortenUrlModelDB(String id) async {
     var result = await _localDataSource.deleteShortenUrlModel(id);
     return result;
   }
