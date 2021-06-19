@@ -1,12 +1,12 @@
 import 'package:get/instance_manager.dart';
-import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/localDataSource/shorten_url_local_datasource.dart';
-import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/remoteDataSource/shorten_url_remote_datasource.dart';
-import 'package:shortly/core/data/shortenUrlData/shortenUrlRepository/shorten_url_repository_impl.dart';
-import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlRepository/shorten_url_repository.dart';
-import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlUsecases/delete_shorten_url_db_usecase.dart';
-import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlUsecases/get_shorten_url_api_usecase.dart';
-import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlUsecases/get_shorten_url_list_db_usecase.dart';
-import 'package:shortly/core/domain/shortenUrlDomain/shortenUrlUsecases/save_new_shorten_url_db_usecase.dart';
+import 'package:shortly/core/data/shorten_url_data/shorten_url_datasource/localDataSource/shorten_url_local_datasource.dart';
+import 'package:shortly/core/data/shorten_url_data/shorten_url_datasource/remoteDataSource/shorten_url_remote_datasource.dart';
+import 'package:shortly/core/data/shorten_url_data/shorten_url_repository/shorten_url_repository_impl.dart';
+import 'package:shortly/core/domain/shorten_url_domain/shorten_url_repository/shorten_url_repository.dart';
+import 'package:shortly/core/domain/shorten_url_domain/shorten_url_usecases/delete_shorten_url_db_usecase.dart';
+import 'package:shortly/core/domain/shorten_url_domain/shorten_url_usecases/get_shorten_url_api_usecase.dart';
+import 'package:shortly/core/domain/shorten_url_domain/shorten_url_usecases/get_shorten_url_list_db_usecase.dart';
+import 'package:shortly/core/domain/shorten_url_domain/shorten_url_usecases/save_new_shorten_url_db_usecase.dart';
 import 'package:shortly/core/presentation/home/controller/home_controller.dart';
 
 class HomeBindings extends Bindings {
@@ -21,7 +21,7 @@ class HomeBindings extends Bindings {
   registerControllers() {
     Get.lazyPut<HomeController>(
       () => HomeController(Get.find<GetShortenUrlApiUsecase>(), Get.find<SaveNewShortenUrlDBUsecase>(), Get.find<GetShortenUrlListDBUsecase>(),
-          Get.find<DeleteShortenUrlDBUsecase>()),
+          Get.find<DeleteShortenUrlDBUsecase>(),),
     );
   }
 

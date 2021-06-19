@@ -44,7 +44,7 @@ class AppLinkCardWidget extends StatelessWidget {
                     children: [
                       AppTextWidget(
                         width: 220.propWidth(),
-                        text: mediumButtonStateModel?.entity?.originalLink,
+                        text: mediumButtonStateModel?.entity?.originalLink ?? '',
                         textAlign: TextAlign.left,
                         style: Theme.of(context).textTheme.bodyText1,
                       ),
@@ -63,7 +63,7 @@ class AppLinkCardWidget extends StatelessWidget {
                 AppTextWidget(
                   margin: EdgeInsets.only(left: 23.propWidth(), top: 5.propHeight()),
                   width: Get.width,
-                  text: mediumButtonStateModel?.entity?.shortLink,
+                  text: mediumButtonStateModel?.entity?.shortLink ?? '',
                   textAlign: TextAlign.left,
                   style: Theme.of(context).textTheme.bodyText1?.copyWith(color: Theme.of(context).colorScheme.primary),
                 ),

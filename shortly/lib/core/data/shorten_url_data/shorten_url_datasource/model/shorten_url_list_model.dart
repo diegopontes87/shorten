@@ -1,7 +1,6 @@
-import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/model/shorten_url_model.dart';
+import 'package:shortly/core/data/shorten_url_data/shorten_url_datasource/model/shorten_url_model.dart';
 
 class ShortenUrlListModel {
-
   List<ShortenUrlModel>? shortenUrlModelList;
 
   ShortenUrlListModel({this.shortenUrlModelList});

@@ -1,7 +1,7 @@
-import 'dart:convert';
 import 'package:multiple_result/multiple_result.dart';
-import 'package:shortly/core/data/shortenUrlData/shortenUrlDataSource/model/shorten_url_model.dart';
-import 'package:shortly/core/data/shortenUrlData/shortenUrlRepository/shortenUrlEntity/shorten_url_entity.dart';
+import 'package:shortly/core/data/shorten_url_data/shorten_url_datasource/model/shorten_url_model.dart';
+
+import 'package:shortly/core/data/shorten_url_data/shorten_url_repository/shorten_url_entity/shorten_url_entity.dart';
 import 'package:shortly/shared/base/entity/error_entity.dart';
 import 'package:shortly/shared/base/structure/base_db_provider.dart';
 import 'package:shortly/shared/res/app_strings.dart';

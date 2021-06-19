@@ -1,6 +1,6 @@
 import 'package:get/route_manager.dart';
 import 'package:shortly/core/presentation/home/bindings/home_bindings.dart';
-import 'package:shortly/core/presentation/home/page/home_page.dart';
+import 'package:shortly/core/presentation/home/pages/home_page.dart';
 import 'package:shortly/core/presentation/onboarding/page/onboarding_page.dart';
 import 'package:shortly/core/presentation/welcome/page/welcome_page.dart';
 

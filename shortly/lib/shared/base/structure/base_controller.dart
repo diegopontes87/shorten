@@ -3,4 +3,9 @@ import 'package:shortly/shared/screen_state/screen_state.dart';
 
 class BaseController extends GetxController {
   ScreenState screenState = ScreenState.initialState;
+
+  updateScreenState(ScreenState newScreenState) {
+    screenState = newScreenState;
+    update();
+  }
 }
