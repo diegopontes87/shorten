@@ -36,21 +36,9 @@ class AppBottomActionCardWidget extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  height: 49.propHeight(),
-                  width: 279.propWidth(),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.background,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(
-                        4.propHeight(),
-                      ),
-                    ),
-                  ),
-                  child: AppTextFieldWidget(
-                    controller: controller,
-                    screenState: screenState,
-                  ),
+                AppTextFieldWidget(
+                  controller: controller,
+                  screenState: screenState,
                 ),
                 AppBigButtonWidget(
                   margin: EdgeInsets.only(top: 10.propHeight()),

@@ -14,17 +14,38 @@ class AppTextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      textAlign: TextAlign.center,
-      textAlignVertical: TextAlignVertical.center,
-      controller: controller,
-      enableInteractiveSelection: true,
-      style: Theme.of(context).textTheme.bodyText1,
-      decoration: InputDecoration(
-        enabledBorder: textFieldBorderColor(context, screenState, controller.text),
-        focusedBorder: textFieldBorderColor(context, screenState, controller.text),
-        hintText: hintText(context, screenState, controller.text),
-        hintStyle: hintTextColor(context, screenState, controller.text),
+    return Container(
+      height: 49.propHeight(),
+      width: 279.propWidth(),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.background,
+        border: Border.all(color: borderColor(context, screenState, controller.text), width: 2.propWidth()),
+        borderRadius: BorderRadius.all(
+          Radius.circular(
+            4.propHeight(),
+          ),
+        ),
+      ),
+      child: Center(
+        child: TextField(
+          textAlign: TextAlign.center,
+          textAlignVertical: TextAlignVertical.center,
+          controller: controller,
+          enableInteractiveSelection: true,
+          style: Theme.of(context).textTheme.bodyText1,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.all(10),
+            isDense: true,
+            enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.transparent),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.transparent),
+            ),
+            hintText: hintText(context, screenState, controller.text),
+            hintStyle: hintTextColor(context, screenState, controller.text),
+          ),
+        ),
       ),
     );
   }
@@ -46,25 +67,11 @@ class AppTextFieldWidget extends StatelessWidget {
     return AppStrings.homeShortenTextFieldText;
   }
 
-  InputBorder? textFieldBorderColor(BuildContext context, ScreenState screenState, String? text) {
+  Color borderColor(BuildContext context, ScreenState screenState, String? text) {
     if (screenState == ScreenState.validatingState && (text == null || text.isEmpty)) {
-      return OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(4.propHeight())),
-        borderSide: BorderSide(
-          color: Theme.of(context).colorScheme.error,
-          width: 1.propWidth(),
-        ),
-      );
+      return Theme.of(context).colorScheme.error;
     } else {
-      return OutlineInputBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(4.propHeight()),
-        ),
-        borderSide: BorderSide(
-          color: Colors.transparent,
-          width: 0,
-        ),
-      );
+      return Colors.transparent;
     }
   }
 }
